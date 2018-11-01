@@ -12,6 +12,20 @@ public void draw()
 }
 public void keyPressed()
 {
+
+	if(key == 'q')
+	{
+		ship.setPointDirection((int)ship.getPointDirection()+5);	
+	}
+	if(key == 'w')
+	{
+		ship.setPointDirection((int)ship.getPointDirection()-5);
+	}
+	if(key == 'e')
+	{
+		ship.setDirectionX(Math.cos((float)ship.getPointDirection()*(-100)));
+		ship.setDirectionY(Math.sin((float)ship.getPointDirection()*(-100)));
+	}
 	if(key == 'r')
 	{
 		ship.setPointDirection((int)(Math.random()*360));
@@ -19,9 +33,5 @@ public void keyPressed()
 		ship.setDirectionY(0);
 		ship.setX((int)(Math.random()*500));
 		ship.setY((int)(Math.random()*500));
-	}
-	if(key == 'q')
-	{
-		
 	}
 }
