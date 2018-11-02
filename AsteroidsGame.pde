@@ -1,30 +1,38 @@
 Spaceship ship;
+Star[] spaceStars = new Star[200];
 public void setup() 
 {
 	size(500, 500);
   	ship = new Spaceship();
+  	for (int i = 0; i < spaceStars.length; i++) 
+  	{
+  		spaceStars[i] = new Star();
+  	}
 }
 public void draw() 
 {
 	background(0);
   	ship.show();
   	ship.move();
+  	for (int i = 0; i < spaceStars.length; i++) 
+  	{
+  		spaceStars[i].show();
+  	}
 }
 public void keyPressed()
 {
 
 	if(key == 'q')
 	{
-		ship.setPointDirection((int)ship.getPointDirection()+5);	
+		ship.turn(10);	
 	}
 	if(key == 'w')
 	{
-		ship.setPointDirection((int)ship.getPointDirection()-5);
+		ship.turn(-10);
 	}
 	if(key == 'e')
-	{
-		ship.setDirectionX(Math.cos((float)ship.getPointDirection()*(-100)));
-		ship.setDirectionY(Math.sin((float)ship.getPointDirection()*(-100)));
+	{	
+		ship.accelerate(0.5);
 	}
 	if(key == 'r')
 	{
