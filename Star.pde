@@ -8,7 +8,8 @@ class Star //note that this class does NOT extend Floater
   }
   public void show()
   {
-  	fill(127,127,0);
-  	ellipse(myX,myY,5,5);
+  	noStroke();
+  	fill(#79a6d2);
+  	ellipse(myX,myY,3,3);
   }
 }

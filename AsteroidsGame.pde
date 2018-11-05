@@ -1,5 +1,5 @@
 Spaceship ship;
-Star[] spaceStars = new Star[200];
+Star[] spaceStars = new Star[1500];
 public void setup() 
 {
 	size(500, 500);
@@ -12,12 +12,12 @@ public void setup()
 public void draw() 
 {
 	background(0);
-  	ship.show();
-  	ship.move();
   	for (int i = 0; i < spaceStars.length; i++) 
   	{
   		spaceStars[i].show();
   	}
+  	ship.show();
+  	ship.move();
 }
 public void keyPressed()
 {
