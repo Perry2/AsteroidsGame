@@ -1,9 +1,11 @@
 Spaceship ship;
+Asteroid aster;
 Star[] spaceStars = new Star[1500];
 public void setup() 
 {
 	size(500, 500);
   	ship = new Spaceship();
+  	aster = new Asteroid();
   	for (int i = 0; i < spaceStars.length; i++) 
   	{
   		spaceStars[i] = new Star();
@@ -18,6 +20,8 @@ public void draw()
   	}
   	ship.show();
   	ship.move();
+  	aster.show();
+  	aster.move();
 }
 public void keyPressed()
 {

@@ -1,4 +1,4 @@
-public class Asteroid extends Floater
+class Asteroid extends Floater
 {
 	private int roSpeed;
 	public Asteroid()
@@ -29,10 +29,13 @@ public class Asteroid extends Floater
 		yCorners[9] = -6;
 		xCorners[10] = 6;
 		yCorners[10] = -6;
+		myColor = #ffccd5;
 	}
 	public void move()
 	{
-		
+		turn(roSpeed);
+		myDirectionX = Math.cos(myPointDirection*50) + 50;
+		myDirectionY = Math.sin(myPointDirection*50) + 50;
 	}
 	public void setX(int x){myCenterX = x;}  
 	public int getX(){return (int)myCenterX;}
