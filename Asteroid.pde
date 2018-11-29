@@ -3,7 +3,7 @@ class Asteroid extends Floater
 	private int roSpeed;
 	public Asteroid()
 	{
-		roSpeed = ((int)Math.random()*5)-5;
+		roSpeed = ((int)Math.random()*3)-3;
 		corners = 11;
 		xCorners = new int[corners];
 		yCorners = new int[corners];
@@ -36,6 +36,23 @@ class Asteroid extends Floater
 		turn(roSpeed);
 		myCenterX = myCenterX + Math.random()*10;
 		myCenterY = myCenterY + Math.random()*10;
+		if(myCenterX >width)
+	    {     
+	      myCenterX = 0;    
+	    }    
+	    else if (myCenterX<0)
+	    {     
+	      myCenterX = width;    
+	    }    
+	    if(myCenterY >height)
+	    {    
+	      myCenterY = 0;    
+	    } 
+	    
+	    else if (myCenterY < 0)
+	    {     
+	      myCenterY = height;    
+	    }	
 	}
 	public void setX(int x){myCenterX = x;}  
 	public int getX(){return (int)myCenterX;}

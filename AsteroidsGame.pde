@@ -1,5 +1,5 @@
 Spaceship ship;
-Asteroid[] aster = new Asteroid[250];
+Asteroid[] aster = new Asteroid[50];
 Star[] spaceStars = new Star[1500];
 public void setup() 
 {
