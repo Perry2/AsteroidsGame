@@ -34,8 +34,8 @@ class Asteroid extends Floater
 	public void move()
 	{
 		turn(roSpeed);
-		myDirectionX = Math.cos(myPointDirection*50) + 50;
-		myDirectionY = Math.sin(myPointDirection*50) + 50;
+		myCenterX = myCenterX + Math.random()*10;
+		myCenterY = myCenterY + Math.random()*10;
 	}
 	public void setX(int x){myCenterX = x;}  
 	public int getX(){return (int)myCenterX;}
