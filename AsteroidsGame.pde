@@ -9,7 +9,7 @@ public void setup()
   	{
   		spaceStars[i] = new Star();
   	}
-  	for(int y = 0; y < 150; y++)
+  	for(int y = 0; y < 25; y++)
   	{
   		aster.add(new Asteroid());
   	}
