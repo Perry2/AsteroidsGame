@@ -1,5 +1,5 @@
 Spaceship ship;
-Asteroid[] aster = new Asteroid[50];
+ArrayList<Asteroid> aster = new ArrayList<Asteroid>();
 Star[] spaceStars = new Star[1500];
 public void setup() 
 {
@@ -9,9 +9,9 @@ public void setup()
   	{
   		spaceStars[i] = new Star();
   	}
-  	for(int y = 0; y < aster.length; y++)
+  	for(int y = 0; y < 150; y++)
   	{
-  		aster[y] = new Asteroid();
+  		aster.add(new Asteroid());
   	}
 }
 public void draw() 
@@ -21,9 +21,12 @@ public void draw()
   	{
   		spaceStars[i].show();
   	}
-  	for(int y = 0; y < aster.length; y++){
-  		aster[y].show();
-  		aster[y].move();
+  	for(int y = 0; y < aster.size(); y++){
+  		aster.get(y).show();
+  		aster.get(y).move();
+  		float d = dist(ship.getX(),ship.getY(),aster.get(y).getX(),aster.get(y).getY());
+  		if (d < 15)
+  			aster.remove(y);
   	}
   	ship.show();
   	ship.move();
@@ -41,7 +44,7 @@ public void keyPressed()
 	}
 	if(key == 'e')
 	{	
-		ship.accelerate(0.5);
+		ship.accelerate(0.2);
 	}
 	if(key == 'r')
 	{
