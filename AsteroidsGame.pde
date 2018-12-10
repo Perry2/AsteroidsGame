@@ -1,10 +1,12 @@
 Spaceship ship;
 ArrayList<Asteroid> aster = new ArrayList<Asteroid>();
+Bullet bullets;
 Star[] spaceStars = new Star[1500];
 public void setup() 
 {
 	size(500, 500);
   	ship = new Spaceship();
+  	bullets = new Bullet();
   	for (int i = 0; i < spaceStars.length; i++) 
   	{
   		spaceStars[i] = new Star();
@@ -30,6 +32,7 @@ public void draw()
   	}
   	ship.show();
   	ship.move();
+  	bullet.show();
 }
 public void keyPressed()
 {
