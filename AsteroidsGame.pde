@@ -1,12 +1,11 @@
 Spaceship ship;
 ArrayList<Asteroid> aster = new ArrayList<Asteroid>();
-Bullet bullets;
+ArrayList<Bullet> bull = new ArrayList<Bullet>();
 Star[] spaceStars = new Star[1500];
 public void setup() 
 {
 	size(500, 500);
   	ship = new Spaceship();
-  	bullets = new Bullet();
   	for (int i = 0; i < spaceStars.length; i++) 
   	{
   		spaceStars[i] = new Star();
@@ -15,6 +14,7 @@ public void setup()
   	{
   		aster.add(new Asteroid());
   	}
+
 }
 public void draw() 
 {
@@ -30,13 +30,24 @@ public void draw()
   		if (d < 15)
   			aster.remove(y);
   	}
+  	 /*for(int x = 0; x < bull.size(); x++){
+  		bull.get(x).show();
+  		bull.get(x).move();
+   		float d = dist(ship.getX(),ship.getY(),aster.get(y).getX(),aster.get(y).getY());
+  		if (d < 15)
+  			bull.remove(y);
+  			aster.remove(y);
+  	}
+  	*/
   	ship.show();
   	ship.move();
-  	bullet.show();
 }
 public void keyPressed()
 {
-
+	if(key == '1')
+	{
+		bull.add(new Bullet(ship));
+	}
 	if(key == 'q')
 	{
 		ship.turn(10);	

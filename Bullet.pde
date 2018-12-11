@@ -11,7 +11,9 @@ class Bullet extends Floater
 	}
 	public void show()
 	{
-		ellipse(SpaceShip.getX(), SpaceShip.getY(), 10, 10);
+		noStroke();
+		fill(#009933);
+		ellipse((int)myCenterX, (int)myCenterY, 11, 11);
 	}
 
 	public void setX(int x){myCenterX = x;}  
