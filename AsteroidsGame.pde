@@ -30,15 +30,17 @@ public void draw()
   		if (d < 15)
   			aster.remove(y);
   	}
-  	 /*for(int x = 0; x < bull.size(); x++){
+  	for(int x = 0; x < bull.size(); x++){
   		bull.get(x).show();
   		bull.get(x).move();
-   		float d = dist(ship.getX(),ship.getY(),aster.get(y).getX(),aster.get(y).getY());
-  		if (d < 15)
-  			bull.remove(y);
-  			aster.remove(y);
   	}
-  	*/
+  	/*while(){
+	  	float di = dist(bull.get(x).getX(),bull.get(x).getY(),aster.get(x).getX(),aster.get(x).getY());
+	  	if (di < 0)
+	  		aster.remove(x);
+	  		bull.remove(x);		
+	}
+	*/
   	ship.show();
   	ship.move();
 }
@@ -47,6 +49,7 @@ public void keyPressed()
 	if(key == '1')
 	{
 		bull.add(new Bullet(ship));
+
 	}
 	if(key == 'q')
 	{
