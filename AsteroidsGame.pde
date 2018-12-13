@@ -10,7 +10,7 @@ public void setup()
   	{
   		spaceStars[i] = new Star();
   	}
-  	for(int y = 0; y < 25; y++)
+  	for(int y = 0; y < 10; y++)
   	{
   		aster.add(new Asteroid());
   	}
@@ -23,24 +23,26 @@ public void draw()
   	{
   		spaceStars[i].show();
   	}
+  	for(int x = 0; x < bull.size(); x++){
+	  		bull.get(x).show();
+	  		bull.get(x).move();
+	  	}
   	for(int y = 0; y < aster.size(); y++){
   		aster.get(y).show();
-  		aster.get(y).move();
-  		float d = dist(ship.getX(),ship.getY(),aster.get(y).getX(),aster.get(y).getY());
-  		if (d < 15)
-  			aster.remove(y);
-  	}
-  	for(int x = 0; x < bull.size(); x++){
-  		bull.get(x).show();
-  		bull.get(x).move();
-  	}
-  	/*while(){
-	  	float di = dist(bull.get(x).getX(),bull.get(x).getY(),aster.get(x).getX(),aster.get(x).getY());
-	  	if (di < 0)
-	  		aster.remove(x);
-	  		bull.remove(x);		
-	}
-	*/
+  		aster.get(y).move();1
+   		for(int x = 0; x < bull.size(); x++){
+	  		if(bull.get(x).getX() > 500 || bull.get(x).getX() < 0 || bull.get(x).getY() > 500 || bull.get(x).getY() < 0)
+	  		{
+	  			bull.remove(x);
+	  		}else if(dist(bull.get(x).getX(),bull.get(x).getY(),aster.get(y).getX(),aster.get(y).getY()) < 30)
+	  		{
+	  			bull.remove(x);
+	  			aster.remove(y);
+	  			break;
+	  		}
+
+	  	} 	
+	  }
   	ship.show();
   	ship.move();
 }
