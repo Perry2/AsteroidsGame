@@ -10,7 +10,7 @@ public void setup()
   	{
   		spaceStars[i] = new Star();
   	}
-  	for(int y = 0; y < 10; y++)
+  	for(int y = 0; y < 150; y++)
   	{
   		aster.add(new Asteroid());
   	}
@@ -29,7 +29,7 @@ public void draw()
 	  	}
   	for(int y = 0; y < aster.size(); y++){
   		aster.get(y).show();
-  		aster.get(y).move();1
+  		aster.get(y).move();
    		for(int x = 0; x < bull.size(); x++){
 	  		if(bull.get(x).getX() > 500 || bull.get(x).getX() < 0 || bull.get(x).getY() > 500 || bull.get(x).getY() < 0)
 	  		{
